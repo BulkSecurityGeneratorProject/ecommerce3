@@ -1,0 +1,25 @@
+{
+    "ecommerceApp": {
+        "tiendas" : {
+            "home": {
+                "title": "Tiendas",
+                "createLabel": "Create a new Tiendas",
+                "createOrEditLabel": "Create or edit a Tiendas",
+                "search": "Search for Tiendas"
+            },
+            "created": "A new Tiendas is created with identifier {{ param }}",
+            "updated": "A Tiendas is updated with identifier {{ param }}",
+            "deleted": "A Tiendas is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tiendas {{ id }}?"
+            },
+            "detail": {
+                "title": "Tiendas"
+            },
+            "nombre": "Nombre",
+            "direccion": "Direccion",
+            "telefono": "Telefono",
+            "horario": "Horario"
+        }
+    }
+}

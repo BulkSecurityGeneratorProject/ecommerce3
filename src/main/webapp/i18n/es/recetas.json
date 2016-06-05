@@ -1,0 +1,24 @@
+{
+    "ecommerceApp": {
+        "recetas" : {
+            "home": {
+                "title": "Recetas",
+                "createLabel": "Crear nuevo Recetas",
+                "createOrEditLabel": "Crear o editar Recetas",
+                "search": "Search for Recetas"
+            },
+            "created": "Un nuevo Recetas ha sido creado con el identificador {{ param }}",
+            "updated": "Un Recetas ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Recetas ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Recetas {{ id }}?"
+            },
+            "detail": {
+                "title": "Recetas"
+            },
+            "nombre": "Nombre",
+            "descripcion": "Descripcion",
+            "imagen": "Imagen"
+        }
+    }
+}

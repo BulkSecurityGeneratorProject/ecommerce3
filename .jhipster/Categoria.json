@@ -1,0 +1,24 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "subcategoria",
+            "otherEntityName": "subcategoria",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "categoria"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20160605181056",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "categoria",
+    "pagination": "pager"
+}

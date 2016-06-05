@@ -1,0 +1,71 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myRecetasLabel" translate="ecommerceApp.recetas.home.createOrEditLabel">Create or edit a Recetas</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.recetas.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.recetas.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="ecommerceApp.recetas.nombre" for="field_nombre">Nombre</label>
+            <input type="text" class="form-control" name="nombre" id="field_nombre"
+                    ng-model="vm.recetas.nombre"
+                    required />
+            <div ng-show="editForm.nombre.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.nombre.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="ecommerceApp.recetas.descripcion" for="field_descripcion">Descripcion</label>
+                <textarea class="form-control" name="descripcion" id="field_descripcion"
+                    ng-model="vm.recetas.descripcion" required />
+            <div ng-show="editForm.descripcion.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.descripcion.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setImagen($file, vm.recetas)" ngf-pattern="'image/*'">
+            <label class="control-label" translate="ecommerceApp.recetas.imagen" for="field_imagen">Imagen</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.recetas.imagenContentType + ';base64,' + vm.recetas.imagen}}" style="max-height: 100px;" ng-if="vm.recetas.imagen"/>
+                <div ng-if="vm.recetas.imagen" class="help-block clearfix">
+                    <span class="pull-left">{{vm.recetas.imagenContentType}}, {{vm.byteSize(vm.recetas.imagen)}}</span>
+                    <button ng-click="vm.recetas.imagen=null;vm.recetas.imagenContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="file" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setImagen($file, vm.recetas)" accept="image/*" translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="imagen" id="field_imagen"
+                    ng-model="vm.recetas.imagen"
+                     />
+            <input type="hidden" class="form-control" name="imagenContentType" id="field_imagenContentType"
+                    ng-model="vm.recetas.imagenContentType" />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,24 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "producto",
+            "otherEntityName": "producto",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "marca"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20160605181142",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "marca",
+    "pagination": "pager"
+}
