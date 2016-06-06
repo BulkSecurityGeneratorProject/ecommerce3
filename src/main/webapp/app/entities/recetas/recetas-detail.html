@@ -1,13 +1,10 @@
 
 <div>
-    <h2><span translate="ecommerceApp.recetas.detail.title">Recetas</span> {{vm.recetas.id}}</h2>
+    <h2> <span>{{vm.recetas.nombre}}</span></h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
-        <dt><span translate="ecommerceApp.recetas.nombre">Nombre</span></dt>
-        <dd>
-            <span>{{vm.recetas.nombre}}</span>
-        </dd>
+
         <dt><span translate="ecommerceApp.recetas.descripcion">Descripcion</span></dt>
         <dd>
             <span>{{vm.recetas.descripcion}}</span>
@@ -16,9 +13,9 @@
         <dd>
             <div ng-if="vm.recetas.imagen">
                 <a ng-click="vm.openFile(vm.recetas.imagenContentType, vm.recetas.imagen)">
-                    <img data-ng-src="{{'data:' + vm.recetas.imagenContentType + ';base64,' + vm.recetas.imagen}}" style="max-width: 100%;"/>
+                    <img data-ng-src="{{'data:' + vm.recetas.imagenContentType + ';base64,' + vm.recetas.imagen}}" style="height: 400px ;"width="500px;"/>
                 </a>
-                {{vm.recetas.imagenContentType}}, {{vm.byteSize(vm.recetas.imagen)}}
+
             </div>
         </dd>
     </dl>
