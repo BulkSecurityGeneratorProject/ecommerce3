@@ -11,7 +11,7 @@ html {
 }
 body {
   margin: 0;
-  /*background-image: url("fondo2.jpg");*/
+  background-image: url("fondo2.jpg");
 }
 .jumbotron{
     background-image: url("recetas2.jpg");

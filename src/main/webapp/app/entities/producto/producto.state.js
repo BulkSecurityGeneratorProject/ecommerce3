@@ -51,6 +51,29 @@
                 }]
             }
         })
+       /* .state('Asist', {
+            parent: 'entity',
+            url: '/jugadors/{Asist}',
+            data: {
+                authorities: ['ROLE_USER'],
+                pageTitle: 'pruebapractica2App.jugador.detail.title'
+            },
+            views: {
+                'content@': {
+                    templateUrl: 'scripts/app/entities/jugador/jugadorsTabla2.html',
+                    controller: 'AsistController'
+                }
+            },
+            resolve: {
+                translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                    $translatePartialLoader.addPart('jugador');
+                    return $translate.refresh();
+                }],
+                entity: ['$stateParams', 'Jugador', function($stateParams, Jugador) {
+                    return Jugador.Asist({totalAsist : 20});
+                }]
+            }
+        })*/
         .state('producto-detail', {
             parent: 'entity',
             url: '/producto/{id}',
@@ -79,7 +102,7 @@
             parent: 'producto',
             url: '/new',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: ['ROLE_ADMIN']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -112,7 +135,7 @@
             parent: 'producto',
             url: '/{id}/edit',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: ['ROLE_ADMIN']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -137,7 +160,7 @@
             parent: 'producto',
             url: '/{id}/delete',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: ['ROLE_ADMIN']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
